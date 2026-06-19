@@ -1,0 +1,11 @@
+{
+    "extName": {
+        "message": "Student Web-Agent"
+    },
+    "extDescription": {
+        "message": "Student browser automation assistant. Control web pages with natural language."
+    },
+    "extActionTitle": {
+        "message": "Open Student Web-Agent"
+    }
+}

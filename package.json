@@ -1,0 +1,106 @@
+{
+    "name": "student-web-agent",
+    "private": true,
+    "version": "0.1.0",
+    "type": "module",
+    "workspaces": [
+        "packages/page-controller",
+        "packages/ui",
+        "packages/llms",
+        "packages/core",
+        "packages/page-agent",
+        "packages/extension"
+    ],
+    "description": "Student Web-Agent project for webpage state extraction and LLM-driven browser actions",
+    "license": "MIT",
+    "engines": {
+        "node": "^22.13.0 || >=24",
+        "npm": "^11.6.3"
+    },
+    "scripts": {
+        "start": "npm run demo",
+        "dev:demo": "npm run dev:demo --workspace=page-agent",
+        "build": "node scripts/build.js",
+        "build:libs": "node scripts/build-libs.js",
+        "typecheck": "tsc --noEmit -p tsconfig.typecheck.json && tsc --noEmit -p packages/extension/tsconfig.json",
+        "lint": "eslint .",
+        "ci": "node scripts/ci.js",
+        "cleanup": "rm -rf packages/*/dist packages/*/.output",
+        "demo": "npm run build:demo --workspace=page-agent && node scripts/demo-server.js",
+        "verify:demo": "npm run build:demo --workspace=page-agent && node scripts/verify-demo-bundle.js",
+        "dev:ext": "npm run dev --workspace=@page-agent/ext",
+        "build:ext": "npm run build --workspace=@page-agent/ext"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^20.5.3",
+        "@commitlint/config-conventional": "^20.5.3",
+        "@eslint-react/eslint-plugin": "^4.2.3",
+        "@eslint/js": "^10.0.1",
+        "@tailwindcss/vite": "^4.3.0",
+        "@trivago/prettier-plugin-sort-imports": "^6.0.2",
+        "@types/node": "^25.6.0",
+        "@vitejs/plugin-react": "^6.0.1",
+        "chalk": "^5.6.2",
+        "concurrently": "^9.2.1",
+        "dotenv": "^17.4.2",
+        "eslint": "^10.2.0",
+        "globals": "^17.5.0",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.4.0",
+        "prettier": "^3.8.2",
+        "typescript": "^6.0.2",
+        "typescript-eslint": "^8.59.2",
+        "vite": "^8.0.12",
+        "vite-plugin-css-injected-by-js": "^5.0.1"
+    },
+    "overrides": {
+        "typescript": "^6.0.2"
+    },
+    "lint-staged": {
+        "*.{js,ts,cjs,cts,mjs,mts}": [
+            "npx prettier --write --ignore-unknown",
+            "npx eslint --quiet"
+        ],
+        "*.{jsx,tsx}": [
+            "npx prettier --write --ignore-unknown",
+            "npx eslint --quiet"
+        ],
+        "*.css": [
+            "npx prettier --write --ignore-unknown"
+        ]
+    },
+    "prettier": {
+        "singleQuote": true,
+        "semi": false,
+        "useTabs": true,
+        "printWidth": 100,
+        "trailingComma": "es5",
+        "plugins": [
+            "@trivago/prettier-plugin-sort-imports"
+        ],
+        "importOrder": [
+            "<THIRD_PARTY_MODULES>",
+            "^(@/).*(?<!css)$",
+            "^[./].*(?<!css)$",
+            ".css$"
+        ],
+        "importOrderSeparation": true,
+        "importOrderSortSpecifiers": true,
+        "overrides": [
+            {
+                "files": "*.md",
+                "options": {
+                    "useTabs": false,
+                    "tabWidth": 4
+                }
+            },
+            {
+                "files": "*.json",
+                "options": {
+                    "useTabs": false,
+                    "tabWidth": 4
+                }
+            }
+        ]
+    }
+}

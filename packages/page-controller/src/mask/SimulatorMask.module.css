@@ -1,0 +1,14 @@
+.wrapper {
+	position: fixed;
+	inset: 0;
+	z-index: 2147483641;
+	cursor: wait;
+	overflow: hidden;
+	background: rgba(248, 250, 252, 0.22);
+
+	display: none;
+}
+
+.wrapper.visible {
+	display: block;
+}

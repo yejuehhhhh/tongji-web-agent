@@ -1,0 +1,11 @@
+{
+    "extName": {
+        "message": "Student Web-Agent"
+    },
+    "extDescription": {
+        "message": "课程项目浏览器自动化助手，用自然语言控制网页。"
+    },
+    "extActionTitle": {
+        "message": "打开 Student Web-Agent"
+    }
+}

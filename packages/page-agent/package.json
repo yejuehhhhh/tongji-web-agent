@@ -1,0 +1,40 @@
+{
+    "name": "page-agent",
+    "private": false,
+    "version": "0.1.0",
+    "type": "module",
+    "main": "./src/PageAgent.ts",
+    "types": "./src/PageAgent.ts",
+    "exports": {
+        ".": {
+            "types": "./src/PageAgent.ts",
+            "default": "./src/PageAgent.ts"
+        }
+    },
+    "description": "Main browser entry for the student Web-Agent project",
+    "keywords": [
+        "web-agent",
+        "browser-automation",
+        "llm",
+        "dom-interaction"
+    ],
+    "license": "MIT",
+    "scripts": {
+        "build": "vite build && npm run build:demo",
+        "build:demo": "vite build --config vite.iife.config.js",
+        "dev:demo": "concurrently \"vite build --config vite.iife.config.js --watch\" \"npx serve dist/iife -p 5174\""
+    },
+    "dependencies": {
+        "@page-agent/core": "0.1.0",
+        "@page-agent/llms": "0.1.0",
+        "@page-agent/page-controller": "0.1.0",
+        "@page-agent/ui": "0.1.0",
+        "chalk": "^5.6.2"
+    },
+    "peerDependencies": {
+        "zod": "^3.25.0 || ^4.0.0"
+    },
+    "devDependencies": {
+        "zod": "^4.4.3"
+    }
+}

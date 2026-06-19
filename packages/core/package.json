@@ -1,0 +1,37 @@
+{
+    "name": "@page-agent/core",
+    "private": false,
+    "version": "0.1.0",
+    "type": "module",
+    "main": "./src/PageAgentCore.ts",
+    "types": "./src/PageAgentCore.ts",
+    "exports": {
+        ".": {
+            "types": "./src/PageAgentCore.ts",
+            "default": "./src/PageAgentCore.ts"
+        }
+    },
+    "description": "Agent loop and action tools for the student Web-Agent project",
+    "keywords": [
+        "web-agent",
+        "agent-loop",
+        "browser-automation",
+        "llm"
+    ],
+    "license": "MIT",
+    "scripts": {
+        "build": "vite build",
+        "dev:iife": "concurrently \"vite build --config vite.iife.config.js --watch\" \"npx serve dist/iife -p 5174\""
+    },
+    "dependencies": {
+        "chalk": "^5.6.2",
+        "@page-agent/llms": "0.1.0",
+        "@page-agent/page-controller": "0.1.0"
+    },
+    "peerDependencies": {
+        "zod": "^3.25.0 || ^4.0.0"
+    },
+    "devDependencies": {
+        "zod": "^4.4.3"
+    }
+}

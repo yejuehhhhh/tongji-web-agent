@@ -1,0 +1,25 @@
+{
+    "name": "@page-agent/page-controller",
+    "version": "0.1.0",
+    "type": "module",
+    "main": "./src/PageController.ts",
+    "types": "./src/PageController.ts",
+    "exports": {
+        ".": {
+            "types": "./src/PageController.ts",
+            "default": "./src/PageController.ts"
+        }
+    },
+    "description": "DOM state extraction and browser actions for the student Web-Agent project",
+    "keywords": [
+        "web-agent",
+        "dom",
+        "element-indexing",
+        "browser-automation"
+    ],
+    "license": "MIT",
+    "scripts": {
+        "build": "vite build"
+    },
+    "dependencies": {}
+}
