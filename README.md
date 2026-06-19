@@ -80,9 +80,9 @@ npm run dev:ext
 
 WXT opens a Chromium profile with the extension installed. In that browser:
 
-1. Open any target website.
-2. Click the extension icon or open the side panel.
-3. Configure the model:
+1. 点击网页插件
+2. 点击配置
+3. 修改配置:
 
 ```text
 Base URL: https://api.deepseek.com
