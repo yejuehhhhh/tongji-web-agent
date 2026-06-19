@@ -8,10 +8,10 @@ import type {
 } from '@page-agent/core'
 import {
 	CheckCircle,
-	CircleDot,
 	Eye,
 	Globe,
 	Keyboard,
+	MousePointerClick,
 	MoveVertical,
 	RefreshCw,
 	XCircle,
@@ -114,7 +114,7 @@ function ReflectionSection({
 // Get icon for action type
 function ActionIcon({ name, className }: { name: string; className?: string }) {
 	const icons: Record<string, React.ReactNode> = {
-		click_element_by_index: <CircleDot className={className} />,
+		click_element_by_index: <MousePointerClick className={className} />,
 		input: <Keyboard className={className} />,
 		scroll: <MoveVertical className={className} />,
 		go_to_url: <Globe className={className} />,

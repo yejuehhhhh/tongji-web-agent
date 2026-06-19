@@ -1,6 +1,6 @@
 # Student Web-Agent
 
-This is a trimmed course-project version of a Web-Agent system. It focuses on a
+This is a course-project version of a Web-Agent system. It focuses on a
 single-page browser agent that can read webpage state, ask an LLM for the next
 action, execute indexed DOM operations, and record the process for demos or
 evaluation.
@@ -66,12 +66,6 @@ extract page elements -> ask the model for the next action -> input text ->
 click the search button -> observe the result -> finish
 ```
 
-For Direction A only, API access is not required. Open the browser console and run:
-
-```js
-await window.pageAgent.pageController.getElementStateJson()
-await window.pageAgent.pageController.drawElementStateOverlay()
-```
 
 ## Run on Any Website With the Browser Extension
 

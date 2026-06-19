@@ -1,61 +1,68 @@
 .cursor {
 	position: absolute;
-	width: var(--cursor-size, 22px);
-	height: var(--cursor-size, 22px);
+	width: 24px;
+	height: 28px;
 	pointer-events: none;
 	z-index: 10000;
-	transform: translate(-4px, -4px);
+	transform: translate(0, 0);
 }
 
-.cursorBorder {
-	position: absolute;
-	left: 15px;
-	top: 15px;
-	width: 7px;
-	height: 7px;
-	background: #111827;
-}
-
-.cursorFilling {
+.cursor::before,
+.cursor::after {
+	content: '';
 	position: absolute;
 	left: 0;
 	top: 0;
+	clip-path: polygon(0 0, 0 21px, 6px 15px, 10px 26px, 14px 24px, 10px 14px, 19px 14px);
+}
+
+.cursor::before {
+	width: 20px;
+	height: 27px;
+	background: #111827;
+	z-index: 2;
+}
+
+.cursor::after {
+	left: 2px;
+	top: 2px;
 	width: 14px;
-	height: 14px;
+	height: 21px;
 	background: #ffffff;
-	border: 2px solid #111827;
-	box-shadow: 2px 2px 0 #111827;
+	clip-path: polygon(0 0, 0 17px, 4px 12px, 8px 21px, 10px 20px, 6px 11px, 14px 11px);
+	z-index: 3;
 }
 
 .cursorRipple {
 	position: absolute;
-	left: -4px;
-	top: -4px;
-	width: 22px;
-	height: 22px;
+	left: -8px;
+	top: -8px;
+	width: 18px;
+	height: 18px;
 	pointer-events: none;
+	z-index: 1;
+}
 
-	&::after {
-		content: '';
-		opacity: 0;
-		position: absolute;
-		inset: 0;
-		border: 2px solid #111827;
-		border-radius: 0;
-	}
+.cursorRipple::after {
+	content: '';
+	opacity: 0;
+	position: absolute;
+	inset: 0;
+	border: 2px solid #111827;
+	border-radius: 999px;
 }
 
 .cursor.clicking .cursorRipple::after {
-	animation: cursor-box 160ms steps(2, end) forwards;
+	animation: cursor-click 180ms ease-out forwards;
 }
 
-@keyframes cursor-box {
+@keyframes cursor-click {
 	0% {
-		transform: scale(0.8);
+		transform: scale(0.45);
 		opacity: 1;
 	}
 	100% {
-		transform: scale(1.2);
+		transform: scale(1.35);
 		opacity: 0;
 	}
 }
