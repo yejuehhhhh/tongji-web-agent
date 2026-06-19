@@ -94,7 +94,7 @@ Response Language: 中文
 4. Enter a natural-language task, for example:
 
 ```text
-请在当前网站搜索 browser-use
+请打开同济教务系统并登录，（提供用户名和密码），查找我的选课信息。
 ```
 
 Build the extension package:
